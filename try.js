@@ -3,7 +3,7 @@ const app = express()
 const port = 5000
 
 app.get('/', (request, response) => {
-  response.send('Hello from Express!')
+  res.render('pages/index')
 })
 
 app.listen(port, (err) => {
