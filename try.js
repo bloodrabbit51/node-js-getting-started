@@ -1,9 +1,9 @@
 const express = require('express')
 const app = express()
-const port = 5000
+const port = 3000
 
 app.get('/', (request, response) => {
-  res.render('pages/index')
+  response.send('Hello from Express!')
 })
 
 app.listen(port, (err) => {
