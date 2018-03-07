@@ -10,7 +10,16 @@ const authkey = '930994931286b111c09386b924cec9ac'
 const url = 'http://api.openweathermap.org/data/2.5/weather?q=pune,in&units=metric&APPID=${authkey}'
 
 const request = http.get(url, response => {
-	console.dir(response)
+	let body = "";
+
+	response.on('data',data => {
+		body += data.toString();
+	});
+
+	response.on('end', () => {
+		const profile = JSON.parse(body);
+		console.dir(profile)
+	});
 });
 
 /*function getdata(){
