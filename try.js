@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const port = process.env.PORT
+publicDir = __dirname + '/public'
 var path = require('path');
 
 const username = 'drexter51'
