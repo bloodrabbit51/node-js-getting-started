@@ -1,4 +1,5 @@
 const express = require('express')
+const http = require('http')
 const app = express()
 const port = process.env.PORT
 publicDir = __dirname + '/public'
@@ -6,16 +7,22 @@ var path = require('path');
 
 const username = 'drexter51'
 const authkey = '930994931286b111c09386b924cec9ac'
-const url = 'http://api.openweathermap.org/data/2.5/weather?q=pune,in&units=metric&APPID='+authkey
+const url = 'http://api.openweathermap.org/data/2.5/weather?q=pune,in&units=metric&APPID=${authkey}'
 
-function data(name,id){
-	const msg = 'my name is ${name} with id as ${id}.'
-	console.log(msg)
+const request = http.get(url, response => {
+	console.dir(response)
+});
+
+function getdata(){
+	const request = http.get(url, response => {
+	console.dir(response)
+	});
 }
 
 app.use(express.static(publicDir));
 
 app.get('/', (request, response) => {
+  getdata();
   res.sendFile(path.join(publicDir,'/index.html'));
 })
 
