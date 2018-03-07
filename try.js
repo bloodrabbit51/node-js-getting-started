@@ -9,7 +9,10 @@ const username = 'drexter51'
 const authkey = '930994931286b111c09386b924cec9ac'
 const url = 'https://api.openweathermap.org/data/2.5/weather?q=pune,in&units=metric&APPID=930994931286b111c09386b924cec9ac'
 
-const request = https.get(url, response => {
+
+
+function getdata(){
+	const request = https.get(url, response => {
 	let body = "";
 
 	response.on('data',data => {
@@ -21,9 +24,9 @@ const request = https.get(url, response => {
 		console.log(profile.main.temp)
 	});
 });
-
-/*function getdata(){
 }
+
+getdata();
 
 app.use(express.static(publicDir));
 
@@ -38,5 +41,5 @@ app.listen(port, (err) => {
 
   console.log(`server is listening on ${port}`)
 })
-*/
+
 
