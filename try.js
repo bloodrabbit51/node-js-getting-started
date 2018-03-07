@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const port = process.env.PORT
+var path = require('path');
 
 const username = 'drexter51'
 const authkey = '930994931286b111c09386b924cec9ac'
@@ -11,9 +12,10 @@ function data(name,id){
 	console.log(msg)
 }
 
+app.use(express.static(publicDir));
+
 app.get('/', (request, response) => {
-  data('shamim ali',134720)
-  response.send('hello ')
+  res.sendFile(path.join(publicDir,'/index.html'));
 })
 
 app.listen(port, (err) => {
