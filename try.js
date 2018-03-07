@@ -1,5 +1,5 @@
 const express = require('express')
-const http = require('http')
+const http = require('https')
 const app = express()
 const port = process.env.PORT
 publicDir = __dirname + '/public'
@@ -7,9 +7,9 @@ var path = require('path');
 
 const username = 'drexter51'
 const authkey = '930994931286b111c09386b924cec9ac'
-const url = 'http://api.openweathermap.org/data/2.5/weather?q=pune,in&units=metric&APPID=${authkey}'
+const url = 'https://api.openweathermap.org/data/2.5/weather?q=pune,in&units=metric&APPID=930994931286b111c09386b924cec9ac'
 
-const request = http.get(url, response => {
+const request = https.get(url, response => {
 	let body = "";
 
 	response.on('data',data => {
