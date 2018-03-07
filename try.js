@@ -18,7 +18,7 @@ const request = https.get(url, response => {
 
 	response.on('end', () => {
 		const profile = JSON.parse(body);
-		console.dir(profile)
+		console.log(profile.main.temp)
 	});
 });
 
