@@ -30,8 +30,8 @@ function getdata(){
 app.use(express.static(publicDir));
 
 app.get('/', (request, response) => {
-  const weather_data = getdata();
-  console.log(weather_data.main.pressure)
+  const weather_data = getdata()
+  console.log(weather_data)
   res.sendFile(path.join(publicDir,'/index.html'));
 })
 
