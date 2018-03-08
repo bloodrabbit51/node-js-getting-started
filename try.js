@@ -24,13 +24,14 @@ function getdata(){
 		console.log(profile.main.temp)
 	});
 });
+	return profile;
 }
-
-getdata();
 
 app.use(express.static(publicDir));
 
 app.get('/', (request, response) => {
+  const weather_data = getdata();
+  console.log(weather_data.main.pressure)
   res.sendFile(path.join(publicDir,'/index.html'));
 })
 
